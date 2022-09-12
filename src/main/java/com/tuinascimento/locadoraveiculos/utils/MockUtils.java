@@ -1,10 +1,10 @@
-package com.tuinascimento.locadoraveiculos;
+package com.tuinascimento.locadoraveiculos.utils;
 
 import com.tuinascimento.locadoraveiculos.model.cliente.Cliente;
 
 import java.util.ArrayList;
 
-public class MockDataService {
+public class MockUtils {
     public static ArrayList<Cliente> getClientes() {
         ArrayList<Cliente> clientes = new ArrayList<>();
 

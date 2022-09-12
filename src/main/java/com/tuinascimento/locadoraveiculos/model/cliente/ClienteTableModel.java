@@ -4,7 +4,7 @@
  */
 package com.tuinascimento.locadoraveiculos.model.cliente;
 
-import com.tuinascimento.locadoraveiculos.MockDataService;
+import com.tuinascimento.locadoraveiculos.utils.MockUtils;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ public class ClienteTableModel extends AbstractTableModel{
     public ClienteTableModel() {
         this.clientes = new ArrayList<>();
 
-        for (Cliente cliente : MockDataService.getClientes()) {
+        for (Cliente cliente : MockUtils.getClientes()) {
             this.clientes.add(cliente);
         }
     }
