@@ -33,9 +33,9 @@
                       <EmptySpace min="21" pref="21" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelRg" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                              <Component id="campoNome" min="-2" pref="436" max="-2" attributes="0"/>
+                              <Component id="jTextFieldNome" min="-2" pref="436" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
@@ -47,19 +47,19 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelCpf" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelNome" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="62" pref="62" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="campoRg" min="-2" pref="147" max="-2" attributes="0"/>
-                                  <Component id="campoCpf" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldRg" min="-2" pref="147" max="-2" attributes="0"/>
+                                  <Component id="jFormattedTextFieldCpf" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelEndereco" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="campoEndereco" min="-2" pref="700" max="-2" attributes="0"/>
+                              <Component id="jTextFieldEndereco" min="-2" pref="700" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="0" pref="153" max="32767" attributes="0"/>
@@ -74,23 +74,23 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="campoNome" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelRg" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldNome" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="campoRg" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelNome" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldRg" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="campoCpf" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelCpf" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jFormattedTextFieldCpf" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="campoEndereco" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelEndereco" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldEndereco" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -106,44 +106,44 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="jLabelNome">
       <Properties>
         <Property name="text" type="java.lang.String" value="RG"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="jLabelRg">
       <Properties>
         <Property name="text" type="java.lang.String" value="Nome"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="jLabelCpf">
       <Properties>
         <Property name="text" type="java.lang.String" value="CPF"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JLabel" name="jLabelEndereco">
       <Properties>
         <Property name="text" type="java.lang.String" value="Endere&#xe7;o"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="campoNome">
+    <Component class="javax.swing.JTextField" name="jTextFieldNome">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoNomeActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldNomeActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="campoEndereco">
+    <Component class="javax.swing.JTextField" name="jTextFieldEndereco">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoEnderecoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldEnderecoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="campoCpf">
+    <Component class="javax.swing.JFormattedTextField" name="jFormattedTextFieldCpf">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoCpfActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormattedTextFieldCpfActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="campoRg">
+    <Component class="javax.swing.JTextField" name="jTextFieldRg">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoRgActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldRgActionPerformed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane2">

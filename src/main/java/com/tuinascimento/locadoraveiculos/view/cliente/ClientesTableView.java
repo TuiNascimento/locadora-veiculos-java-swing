@@ -41,14 +41,14 @@ public class ClientesTableView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        campoNome = new javax.swing.JTextField();
-        campoEndereco = new javax.swing.JTextField();
-        campoCpf = new javax.swing.JFormattedTextField();
-        campoRg = new javax.swing.JTextField();
+        jLabelNome = new javax.swing.JLabel();
+        jLabelRg = new javax.swing.JLabel();
+        jLabelCpf = new javax.swing.JLabel();
+        jLabelEndereco = new javax.swing.JLabel();
+        jTextFieldNome = new javax.swing.JTextField();
+        jTextFieldEndereco = new javax.swing.JTextField();
+        jFormattedTextFieldCpf = new javax.swing.JFormattedTextField();
+        jTextFieldRg = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableClientes = new javax.swing.JTable();
         botaoRemover = new javax.swing.JButton();
@@ -57,15 +57,13 @@ public class ClientesTableView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("RG");
+        jLabelNome.setText("RG");
 
-        jLabel2.setText("Nome");
+        jLabelRg.setText("Nome");
 
-        jLabel3.setText("CPF");
+        jLabelCpf.setText("CPF");
 
-        jLabel4.setText("Endereço");
-
-        campoCpf.setFormatterFactory(new DefaultFormatterFactory(MaskUtils.getCpfMask()));
+        jLabelEndereco.setText("Endereço");
 
         jTableClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -103,9 +101,9 @@ public class ClientesTableView extends javax.swing.JFrame {
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
+                                .addComponent(jLabelRg)
                                 .addGap(44, 44, 44)
-                                .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(4, 4, 4)
                                 .addComponent(botaoAdicionar)
@@ -115,16 +113,16 @@ public class ClientesTableView extends javax.swing.JFrame {
                                 .addComponent(botaoAtualizar))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel1))
+                                    .addComponent(jLabelCpf)
+                                    .addComponent(jLabelNome))
                                 .addGap(62, 62, 62)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(campoRg, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(campoCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jTextFieldRg, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jFormattedTextFieldCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
+                                .addComponent(jLabelEndereco)
                                 .addGap(18, 18, 18)
-                                .addComponent(campoEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 153, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -133,20 +131,20 @@ public class ClientesTableView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelRg)
+                    .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(campoRg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelNome)
+                    .addComponent(jTextFieldRg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(campoCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelCpf)
+                    .addComponent(jFormattedTextFieldCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(campoEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelEndereco)
+                    .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoRemover)
@@ -164,10 +162,10 @@ public class ClientesTableView extends javax.swing.JFrame {
         int linhaSelecionada = jTableClientes.getSelectedRow();
         if (linhaSelecionada != -1) {
             Cliente clienteSelecionado = clienteTableModel.getCliente(linhaSelecionada);
-            campoNome.setText(clienteSelecionado.getNome());
-            campoRg.setText(clienteSelecionado.getRg());
-            campoCpf.setText(clienteSelecionado.getCpf());
-            campoEndereco.setText(clienteSelecionado.getEndereco());
+            jTextFieldNome.setText(clienteSelecionado.getNome());
+            jTextFieldRg.setText(clienteSelecionado.getRg());
+            jFormattedTextFieldCpf.setText(clienteSelecionado.getCpf());
+            jTextFieldEndereco.setText(clienteSelecionado.getEndereco());
         }
     }
 
@@ -206,7 +204,7 @@ public class ClientesTableView extends javax.swing.JFrame {
 
         int linhaAtual = this.jTableClientes.getSelectedRow();
         while (linhaAtual != -1) {
-            Cliente clienteAtualizado = new Cliente(this.campoNome.getText(), this.campoRg.getText(), this.campoCpf.getText(), this.campoEndereco.getText());
+            Cliente clienteAtualizado = new Cliente(this.jTextFieldNome.getText(), this.jTextFieldRg.getText(), this.jFormattedTextFieldCpf.getText(), this.jTextFieldEndereco.getText());
             this.clienteTableModel.atualizaCliente(linhaAtual, clienteAtualizado);
 
             linhaAtual = this.jTableClientes.getSelectedRow();
@@ -220,7 +218,7 @@ public class ClientesTableView extends javax.swing.JFrame {
             return;
         }
 
-        Cliente cliente = new Cliente(this.campoNome.getText(), this.campoRg.getText(), this.campoCpf.getText(), this.campoEndereco.getText());
+        Cliente cliente = new Cliente(this.jTextFieldNome.getText(), this.jTextFieldRg.getText(), this.jFormattedTextFieldCpf.getText(), this.jTextFieldEndereco.getText());
         this.clienteTableModel.adicionaCliente(cliente);
     }
 
@@ -247,9 +245,9 @@ public class ClientesTableView extends javax.swing.JFrame {
 
         int numeroLinhasSelecionadas = this.jTableClientes.getSelectedRowCount();
         if (numeroLinhasSelecionadas > 1) {
-            if (!this.campoRg.getText().isEmpty())
+            if (!this.jTextFieldRg.getText().isEmpty())
                 mensagemValidacao += "Não é possível atualizar mais de um cliente para o mesmo RG.\n";
-            if (!StringUtils.removeNonNumeric(this.campoCpf.getText()).isEmpty())
+            if (!StringUtils.removeNonNumeric(this.jFormattedTextFieldCpf.getText()).isEmpty())
                 mensagemValidacao += "Não é possível atualizar mais de um cliente para o mesmo CPF.\n";
         }
 
@@ -259,15 +257,15 @@ public class ClientesTableView extends javax.swing.JFrame {
     private String validaCamposObrigatorios() {
         String mensagemValidacao = "";
 
-        if (this.campoNome.getText().isEmpty()) {
+        if (this.jTextFieldNome.getText().isEmpty()) {
             mensagemValidacao += "O campo nome é obrigatório. \n";
         }
 
-        if (StringUtils.removeNonNumeric(this.campoCpf.getText()).isEmpty()) {
+        if (StringUtils.removeNonNumeric(this.jFormattedTextFieldCpf.getText()).isEmpty()) {
             mensagemValidacao += "O campo CPF é obrigatório. \n";
         }
 
-        if (!CpfCnpjUtils.validaCpf(this.campoCpf.getText())) {
+        if (!CpfCnpjUtils.validaCpf(this.jFormattedTextFieldCpf.getText())) {
             mensagemValidacao += "O CPF informado é inválido. \n";
         }
 
@@ -275,7 +273,7 @@ public class ClientesTableView extends javax.swing.JFrame {
     }
 
     private String validaClienteComMesmosDados(ActionEvent evt) {
-        Cliente clienteComMesmosDados = this.clienteTableModel.getClienteByUniqueFields(this.campoCpf.getText(), this.campoRg.getText(), this.campoCpf.getText());
+        Cliente clienteComMesmosDados = this.clienteTableModel.getClienteByUniqueFields(this.jFormattedTextFieldCpf.getText(), this.jTextFieldRg.getText(), this.jFormattedTextFieldCpf.getText());
         if (clienteComMesmosDados == null) return "";
 
         if (evt.getActionCommand().equals(ClientesTableView.UPDATE_BUTTON_TEXT)) {
@@ -327,15 +325,15 @@ public class ClientesTableView extends javax.swing.JFrame {
     private javax.swing.JButton botaoAdicionar;
     private javax.swing.JButton botaoAtualizar;
     private javax.swing.JButton botaoRemover;
-    private javax.swing.JFormattedTextField campoCpf;
-    private javax.swing.JTextField campoEndereco;
-    private javax.swing.JTextField campoNome;
-    private javax.swing.JTextField campoRg;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JFormattedTextField jFormattedTextFieldCpf;
+    private javax.swing.JLabel jLabelCpf;
+    private javax.swing.JLabel jLabelEndereco;
+    private javax.swing.JLabel jLabelNome;
+    private javax.swing.JLabel jLabelRg;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableClientes;
+    private javax.swing.JTextField jTextFieldEndereco;
+    private javax.swing.JTextField jTextFieldNome;
+    private javax.swing.JTextField jTextFieldRg;
     // End of variables declaration//GEN-END:variables
 }
