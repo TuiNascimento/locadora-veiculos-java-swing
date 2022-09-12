@@ -15,16 +15,16 @@ import java.awt.event.ActionEvent;
 /**
  * @author asaas
  */
-public class ClientesTableView extends javax.swing.JFrame {
+public class ManterClienteView extends javax.swing.JFrame {
 
     private ClienteDAO clienteDAO;
 
     private static final String UPDATE_BUTTON_TEXT = "Atualizar";
 
     /**
-     * Creates new form ClientesTableView
+     * Creates new form ManterClienteView
      */
-    public ClientesTableView() {
+    public ManterClienteView() {
         initComponents();
         this.clienteDAO = new ClienteDAO();
         this.jTableClientes.setModel(this.clienteDAO);
@@ -307,7 +307,7 @@ public class ClientesTableView extends javax.swing.JFrame {
         Cliente clienteComMesmosDados = this.clienteDAO.getClienteByUniqueFields(this.jFormattedTextFieldCpf.getText(), this.jTextFieldRg.getText(), this.jFormattedTextFieldCpf.getText());
         if (clienteComMesmosDados == null) return "";
 
-        if (evt.getActionCommand().equals(ClientesTableView.UPDATE_BUTTON_TEXT)) {
+        if (evt.getActionCommand().equals(ManterClienteView.UPDATE_BUTTON_TEXT)) {
             int linhaAtual = this.jTableClientes.getSelectedRow();
             Cliente clienteAtual = this.clienteDAO.getCliente(linhaAtual);
 
@@ -334,20 +334,20 @@ public class ClientesTableView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ClientesTableView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManterClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ClientesTableView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManterClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ClientesTableView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManterClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ClientesTableView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManterClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ClientesTableView().setVisible(true);
+                new ManterClienteView().setVisible(true);
             }
         });
     }
