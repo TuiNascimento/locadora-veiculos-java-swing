@@ -353,10 +353,10 @@ public class ManterClienteView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botaoAdicionar;
-    private javax.swing.JButton botaoAtualizar;
-    private javax.swing.JButton botaoRemover;
-    private javax.swing.JFormattedTextField jFormattedTextFieldCpf;
+    public javax.swing.JButton botaoAdicionar;
+    public javax.swing.JButton botaoAtualizar;
+    public javax.swing.JButton botaoRemover;
+    public javax.swing.JFormattedTextField jFormattedTextFieldCpf;
     private javax.swing.JLabel jLabelCpf;
     private javax.swing.JLabel jLabelEndereco;
     private javax.swing.JLabel jLabelNome;
@@ -365,10 +365,10 @@ public class ManterClienteView extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuClientes;
     private javax.swing.JMenuItem jMenuItemManter;
     private javax.swing.JMenu jMenuVeiculos;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTableClientes;
-    private javax.swing.JTextField jTextFieldEndereco;
-    private javax.swing.JTextField jTextFieldNome;
-    private javax.swing.JTextField jTextFieldRg;
+    public javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JTable jTableClientes;
+    public javax.swing.JTextField jTextFieldEndereco;
+    public javax.swing.JTextField jTextFieldNome;
+    public javax.swing.JTextField jTextFieldRg;
     // End of variables declaration//GEN-END:variables
 }

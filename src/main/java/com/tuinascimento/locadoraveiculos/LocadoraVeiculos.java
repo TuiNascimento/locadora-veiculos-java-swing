@@ -17,11 +17,6 @@ import javax.swing.*;
 public class LocadoraVeiculos {
 
     public static void main(String[] args) {
-        try {
-            UIManager.setLookAndFeel( new FlatDarculaLaf() );
-        } catch( Exception ex ) {
-            ex.printStackTrace();
-        }
         new LocadoraVeiculosMainView().setVisible(true);
     }
 }
