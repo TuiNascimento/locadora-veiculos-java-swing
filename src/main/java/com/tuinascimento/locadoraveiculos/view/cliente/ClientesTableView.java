@@ -54,6 +54,10 @@ public class ClientesTableView extends javax.swing.JFrame {
         botaoRemover = new javax.swing.JButton();
         botaoAtualizar = new javax.swing.JButton();
         botaoAdicionar = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenuClientes = new javax.swing.JMenu();
+        jMenuItemManter = new javax.swing.JMenuItem();
+        jMenuVeiculos = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,51 +84,76 @@ public class ClientesTableView extends javax.swing.JFrame {
         jTableClientes.getSelectionModel().addListSelectionListener(e -> atualizaValorCamposComClienteSelecionado());
 
         botaoRemover.setText("Remover");
-        botaoRemover.addActionListener(evt -> removerListaClientesSelecionados(evt));
+        botaoRemover.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removerListaClientesSelecionados(evt);
+            }
+        });
 
-        botaoAtualizar.setText(ClientesTableView.UPDATE_BUTTON_TEXT);
-        botaoAtualizar.addActionListener(evt -> atualizarListaClientesSelecionados(evt));
+        botaoAtualizar.setText("Atualizar");
+        botaoAtualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atualizarListaClientesSelecionados(evt);
+            }
+        });
 
         botaoAdicionar.setText("Adicionar");
-        botaoAdicionar.addActionListener(evt -> adicionarCliente(evt));
+        botaoAdicionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adicionarCliente(evt);
+            }
+        });
+
+        jMenuClientes.setText("Clientes");
+
+        jMenuItemManter.setText("jMenuItem2");
+        jMenuItemManter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemManterActionPerformed(evt);
+            }
+        });
+        jMenuClientes.add(jMenuItemManter);
+
+        jMenuBar1.add(jMenuClientes);
+
+        jMenuVeiculos.setText("Veiculos");
+        jMenuBar1.add(jMenuVeiculos);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabelRg)
-                                .addGap(44, 44, 44)
-                                .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(botaoAdicionar)
-                                .addGap(18, 18, 18)
-                                .addComponent(botaoRemover)
-                                .addGap(18, 18, 18)
-                                .addComponent(botaoAtualizar))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelCpf)
-                                    .addComponent(jLabelNome))
-                                .addGap(62, 62, 62)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldRg, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jFormattedTextFieldCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabelEndereco)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 153, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 805, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabelRg)
+                            .addGap(44, 44, 44)
+                            .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(4, 4, 4)
+                            .addComponent(botaoAdicionar)
+                            .addGap(18, 18, 18)
+                            .addComponent(botaoRemover)
+                            .addGap(18, 18, 18)
+                            .addComponent(botaoAtualizar))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabelCpf)
+                                .addComponent(jLabelNome))
+                            .addGap(62, 62, 62)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTextFieldRg, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jFormattedTextFieldCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabelEndereco)
+                            .addGap(18, 18, 18)
+                            .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,6 +186,14 @@ public class ClientesTableView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItemManterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemManterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItemManterActionPerformed
+
+    private void atualizarListaClientesSelecionados(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarListaClientesSelecionados
+        // TODO add your handling code here:
+    }//GEN-LAST:event_atualizarListaClientesSelecionados
 
     private void atualizaValorCamposComClienteSelecionado() {
         int linhaSelecionada = jTableClientes.getSelectedRow();
@@ -330,6 +367,10 @@ public class ClientesTableView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelEndereco;
     private javax.swing.JLabel jLabelNome;
     private javax.swing.JLabel jLabelRg;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jMenuClientes;
+    private javax.swing.JMenuItem jMenuItemManter;
+    private javax.swing.JMenu jMenuVeiculos;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableClientes;
     private javax.swing.JTextField jTextFieldEndereco;

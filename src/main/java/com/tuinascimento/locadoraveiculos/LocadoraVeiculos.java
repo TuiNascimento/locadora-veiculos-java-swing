@@ -5,7 +5,7 @@
 
 package com.tuinascimento.locadoraveiculos;
 
-import com.tuinascimento.locadoraveiculos.view.JanelaPrincipal;
+import com.tuinascimento.locadoraveiculos.view.cliente.ClientesTableView;
 
 /**
  *
@@ -14,6 +14,6 @@ import com.tuinascimento.locadoraveiculos.view.JanelaPrincipal;
 public class LocadoraVeiculos {
 
     public static void main(String[] args) {
-        new JanelaPrincipal().setVisible(true);
+        new ClientesTableView().setVisible(true);
     }
 }
