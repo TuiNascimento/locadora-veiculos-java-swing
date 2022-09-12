@@ -1,11 +1,12 @@
-package com.tuinascimento.locadoraveiculos.model.cliente.veiculo;
+package com.tuinascimento.locadoraveiculos.model.veiculo;
 
 import com.tuinascimento.locadoraveiculos.model.cliente.Cliente;
-import com.tuinascimento.locadoraveiculos.model.cliente.veiculo.enums.CategoriaVeiculo;
-import com.tuinascimento.locadoraveiculos.model.cliente.veiculo.enums.EstadoVeiculo;
-import com.tuinascimento.locadoraveiculos.model.cliente.veiculo.enums.MarcaVeiculo;
+import com.tuinascimento.locadoraveiculos.model.veiculo.enums.CategoriaVeiculo;
+import com.tuinascimento.locadoraveiculos.model.veiculo.enums.EstadoVeiculo;
+import com.tuinascimento.locadoraveiculos.model.veiculo.enums.MarcaVeiculo;
 
 import java.util.Calendar;
+import java.util.Date;
 
 public abstract class Veiculo  implements VeiculoI{
 
@@ -30,6 +31,11 @@ public abstract class Veiculo  implements VeiculoI{
         this.ano = ano;
     }
 
+    public int calculaIdade() {
+        int anoAtual = Calendar.getInstance().get(Calendar.YEAR);
+        return anoAtual - this.ano;
+    }
+
     @Override
     public void locar(int dias, Calendar data, Cliente cliente) {
 
@@ -47,36 +53,39 @@ public abstract class Veiculo  implements VeiculoI{
 
     @Override
     public EstadoVeiculo getEstado() {
-        return null;
+        return this.estado;
     }
 
     @Override
     public MarcaVeiculo getMarca() {
-        return null;
+        return this.marca;
     }
 
     @Override
     public CategoriaVeiculo getCategoria() {
-        return null;
+        return this.categoria;
     }
 
     @Override
     public String getPlaca() {
-        return null;
+        return this.placa;
     }
 
     @Override
     public int getAno() {
-        return 0;
+        return this.ano;
     }
 
     @Override
     public double getValorParaVenda() {
-        return 0;
+        double valorParaVenda = this.valorDeCompra - (calculaIdade() * 0.15 * this.valorDeCompra);
+        double valorMinimo = this.valorDeCompra * 0.1;
+
+        if (valorParaVenda > 0 || valorParaVenda > (valorMinimo)) return valorParaVenda;
+
+        return valorMinimo;
     }
 
     @Override
-    public double getValorDiariaLocacao() {
-        return 0;
-    }
+    public abstract double getValorDiariaLocacao();
 }

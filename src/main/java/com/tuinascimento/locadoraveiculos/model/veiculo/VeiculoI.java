@@ -1,9 +1,9 @@
-package com.tuinascimento.locadoraveiculos.model.cliente.veiculo;
+package com.tuinascimento.locadoraveiculos.model.veiculo;
 
 import com.tuinascimento.locadoraveiculos.model.cliente.Cliente;
-import com.tuinascimento.locadoraveiculos.model.cliente.veiculo.enums.CategoriaVeiculo;
-import com.tuinascimento.locadoraveiculos.model.cliente.veiculo.enums.EstadoVeiculo;
-import com.tuinascimento.locadoraveiculos.model.cliente.veiculo.enums.MarcaVeiculo;
+import com.tuinascimento.locadoraveiculos.model.veiculo.enums.CategoriaVeiculo;
+import com.tuinascimento.locadoraveiculos.model.veiculo.enums.EstadoVeiculo;
+import com.tuinascimento.locadoraveiculos.model.veiculo.enums.MarcaVeiculo;
 
 import java.util.Calendar;
 
