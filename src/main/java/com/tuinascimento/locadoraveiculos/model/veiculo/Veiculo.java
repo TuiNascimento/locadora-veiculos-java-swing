@@ -1,5 +1,6 @@
 package com.tuinascimento.locadoraveiculos.model.veiculo;
 
+import com.tuinascimento.locadoraveiculos.model.Locacao;
 import com.tuinascimento.locadoraveiculos.model.cliente.Cliente;
 import com.tuinascimento.locadoraveiculos.model.veiculo.enums.CategoriaVeiculo;
 import com.tuinascimento.locadoraveiculos.model.veiculo.enums.EstadoVeiculo;
@@ -13,6 +14,8 @@ public abstract class Veiculo  implements VeiculoI{
     private MarcaVeiculo marca;
 
     private EstadoVeiculo estado;
+
+    private Locacao locacao;
 
     private CategoriaVeiculo categoria;
 
@@ -38,17 +41,21 @@ public abstract class Veiculo  implements VeiculoI{
 
     @Override
     public void locar(int dias, Calendar data, Cliente cliente) {
+        if (this.estado.isLocado()) return;
 
+        this.locacao = new Locacao(dias, getValorDiariaLocacao(), data, cliente);
+        this.estado = EstadoVeiculo.LOCADO;
     }
 
     @Override
     public void vender() {
-
+        this.estado = EstadoVeiculo.VENDIDO;
     }
 
     @Override
     public void devolver() {
-
+        this.estado = EstadoVeiculo.DISPONIVEL;
+        this.locacao = null;
     }
 
     @Override

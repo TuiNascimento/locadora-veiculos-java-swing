@@ -4,5 +4,9 @@ public enum EstadoVeiculo {
     NOVO,
     LOCADO,
     DISPONIVEL,
-    VENDIDO
+    VENDIDO;
+
+    public Boolean isLocado() {
+        return this == LOCADO;
+    }
 }
