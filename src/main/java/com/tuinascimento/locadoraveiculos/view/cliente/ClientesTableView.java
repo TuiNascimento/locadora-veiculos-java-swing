@@ -5,7 +5,7 @@
 package com.tuinascimento.locadoraveiculos.view.cliente;
 
 import com.tuinascimento.locadoraveiculos.model.cliente.Cliente;
-import com.tuinascimento.locadoraveiculos.model.cliente.ClienteTableModel;
+import com.tuinascimento.locadoraveiculos.model.cliente.ClienteDAO;
 import com.tuinascimento.locadoraveiculos.utils.CpfCnpjUtils;
 import com.tuinascimento.locadoraveiculos.utils.StringUtils;
 
@@ -17,7 +17,7 @@ import java.awt.event.ActionEvent;
  */
 public class ClientesTableView extends javax.swing.JFrame {
 
-    private ClienteTableModel clienteTableModel;
+    private ClienteDAO clienteDAO;
 
     private static final String UPDATE_BUTTON_TEXT = "Atualizar";
 
@@ -26,8 +26,8 @@ public class ClientesTableView extends javax.swing.JFrame {
      */
     public ClientesTableView() {
         initComponents();
-        this.clienteTableModel = new ClienteTableModel();
-        this.jTableClientes.setModel(this.clienteTableModel);
+        this.clienteDAO = new ClienteDAO();
+        this.jTableClientes.setModel(this.clienteDAO);
     }
 
     /**
@@ -199,7 +199,7 @@ public class ClientesTableView extends javax.swing.JFrame {
         int linhaAtual = this.jTableClientes.getSelectedRow();
         while (linhaAtual != -1) {
             Cliente clienteAtualizado = new Cliente(this.jTextFieldNome.getText(), this.jTextFieldRg.getText(), this.jFormattedTextFieldCpf.getText(), this.jTextFieldEndereco.getText());
-            this.clienteTableModel.atualizaCliente(linhaAtual, clienteAtualizado);
+            this.clienteDAO.atualizaCliente(linhaAtual, clienteAtualizado);
 
             linhaAtual = this.jTableClientes.getSelectedRow();
         }
@@ -208,7 +208,7 @@ public class ClientesTableView extends javax.swing.JFrame {
     private void atualizaValorCamposComClienteSelecionado() {
         int linhaSelecionada = jTableClientes.getSelectedRow();
         if (linhaSelecionada != -1) {
-            Cliente clienteSelecionado = clienteTableModel.getCliente(linhaSelecionada);
+            Cliente clienteSelecionado = clienteDAO.getCliente(linhaSelecionada);
             jTextFieldNome.setText(clienteSelecionado.getNome());
             jTextFieldRg.setText(clienteSelecionado.getRg());
             jFormattedTextFieldCpf.setText(clienteSelecionado.getCpf());
@@ -236,7 +236,7 @@ public class ClientesTableView extends javax.swing.JFrame {
         if (opcaoSelecionada != JOptionPane.YES_OPTION) return;
 
         while (linhaAtual != -1) {
-            this.clienteTableModel.removeCliente(linhaAtual);
+            this.clienteDAO.removeCliente(linhaAtual);
 
             linhaAtual = this.jTableClientes.getSelectedRow();
         }
@@ -250,7 +250,7 @@ public class ClientesTableView extends javax.swing.JFrame {
         }
 
         Cliente cliente = new Cliente(this.jTextFieldNome.getText(), this.jTextFieldRg.getText(), this.jFormattedTextFieldCpf.getText(), this.jTextFieldEndereco.getText());
-        this.clienteTableModel.adicionaCliente(cliente);
+        this.clienteDAO.adicionaCliente(cliente);
     }
 
     private String validarAdicionarCliente(ActionEvent evt) {
@@ -304,12 +304,12 @@ public class ClientesTableView extends javax.swing.JFrame {
     }
 
     private String validaClienteComMesmosDados(ActionEvent evt) {
-        Cliente clienteComMesmosDados = this.clienteTableModel.getClienteByUniqueFields(this.jFormattedTextFieldCpf.getText(), this.jTextFieldRg.getText(), this.jFormattedTextFieldCpf.getText());
+        Cliente clienteComMesmosDados = this.clienteDAO.getClienteByUniqueFields(this.jFormattedTextFieldCpf.getText(), this.jTextFieldRg.getText(), this.jFormattedTextFieldCpf.getText());
         if (clienteComMesmosDados == null) return "";
 
         if (evt.getActionCommand().equals(ClientesTableView.UPDATE_BUTTON_TEXT)) {
             int linhaAtual = this.jTableClientes.getSelectedRow();
-            Cliente clienteAtual = this.clienteTableModel.getCliente(linhaAtual);
+            Cliente clienteAtual = this.clienteDAO.getCliente(linhaAtual);
 
             if (clienteAtual.equals(clienteComMesmosDados)) return "";
         }

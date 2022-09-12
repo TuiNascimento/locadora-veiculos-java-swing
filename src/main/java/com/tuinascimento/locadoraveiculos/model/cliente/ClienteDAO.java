@@ -13,13 +13,13 @@ import java.util.ArrayList;
  *
  * @author asaas
  */
-public class ClienteTableModel extends AbstractTableModel{
+public class ClienteDAO extends AbstractTableModel{
 
     private ArrayList<Cliente> clientes;
 
     private final String[] campos = {"Nome", "RG", "CPF", "Endereço"};
 
-    public ClienteTableModel() {
+    public ClienteDAO() {
         this.clientes = new ArrayList<>();
 
         for (Cliente cliente : MockUtils.getClientes()) {
