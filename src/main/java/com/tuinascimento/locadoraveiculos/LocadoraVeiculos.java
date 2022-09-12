@@ -5,7 +5,10 @@
 
 package com.tuinascimento.locadoraveiculos;
 
-import com.tuinascimento.locadoraveiculos.view.cliente.ManterClienteView;
+import com.formdev.flatlaf.FlatDarculaLaf;
+import com.tuinascimento.locadoraveiculos.view.LocadoraVeiculosMainView;
+
+import javax.swing.*;
 
 /**
  *
@@ -14,6 +17,11 @@ import com.tuinascimento.locadoraveiculos.view.cliente.ManterClienteView;
 public class LocadoraVeiculos {
 
     public static void main(String[] args) {
-        new ManterClienteView().setVisible(true);
+        try {
+            UIManager.setLookAndFeel( new FlatDarculaLaf() );
+        } catch( Exception ex ) {
+            ex.printStackTrace();
+        }
+        new LocadoraVeiculosMainView().setVisible(true);
     }
 }
