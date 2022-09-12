@@ -7,11 +7,9 @@ package com.tuinascimento.locadoraveiculos.view.cliente;
 import com.tuinascimento.locadoraveiculos.model.cliente.Cliente;
 import com.tuinascimento.locadoraveiculos.model.cliente.ClienteTableModel;
 import com.tuinascimento.locadoraveiculos.utils.CpfCnpjUtils;
-import com.tuinascimento.locadoraveiculos.utils.MaskUtils;
 import com.tuinascimento.locadoraveiculos.utils.StringUtils;
 
 import javax.swing.*;
-import javax.swing.text.DefaultFormatterFactory;
 import java.awt.event.ActionEvent;
 
 /**
@@ -191,9 +189,21 @@ public class ClientesTableView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItemManterActionPerformed
 
-    private void atualizarListaClientesSelecionados(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarListaClientesSelecionados
-        // TODO add your handling code here:
-    }//GEN-LAST:event_atualizarListaClientesSelecionados
+    private void atualizarListaClientesSelecionados(java.awt.event.ActionEvent evt) {
+        String mensagemValidacao = validarAtualizacaoClientes(evt);
+        if (!mensagemValidacao.isEmpty()) {
+            JOptionPane.showMessageDialog(this, mensagemValidacao);
+            return;
+        }
+
+        int linhaAtual = this.jTableClientes.getSelectedRow();
+        while (linhaAtual != -1) {
+            Cliente clienteAtualizado = new Cliente(this.jTextFieldNome.getText(), this.jTextFieldRg.getText(), this.jFormattedTextFieldCpf.getText(), this.jTextFieldEndereco.getText());
+            this.clienteTableModel.atualizaCliente(linhaAtual, clienteAtualizado);
+
+            linhaAtual = this.jTableClientes.getSelectedRow();
+        }
+    }
 
     private void atualizaValorCamposComClienteSelecionado() {
         int linhaSelecionada = jTableClientes.getSelectedRow();
@@ -227,22 +237,6 @@ public class ClientesTableView extends javax.swing.JFrame {
 
         while (linhaAtual != -1) {
             this.clienteTableModel.removeCliente(linhaAtual);
-
-            linhaAtual = this.jTableClientes.getSelectedRow();
-        }
-    }
-
-    private void atualizarListaClientesSelecionados(java.awt.event.ActionEvent evt) {
-        String mensagemValidacao = validarAtualizacaoClientes(evt);
-        if (!mensagemValidacao.isEmpty()) {
-            JOptionPane.showMessageDialog(this, mensagemValidacao);
-            return;
-        }
-
-        int linhaAtual = this.jTableClientes.getSelectedRow();
-        while (linhaAtual != -1) {
-            Cliente clienteAtualizado = new Cliente(this.jTextFieldNome.getText(), this.jTextFieldRg.getText(), this.jFormattedTextFieldCpf.getText(), this.jTextFieldEndereco.getText());
-            this.clienteTableModel.atualizaCliente(linhaAtual, clienteAtualizado);
 
             linhaAtual = this.jTableClientes.getSelectedRow();
         }
