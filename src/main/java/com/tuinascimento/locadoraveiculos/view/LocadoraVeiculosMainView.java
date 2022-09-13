@@ -74,6 +74,7 @@ public class LocadoraVeiculosMainView extends javax.swing.JFrame {
         botaoAdicionar = new javax.swing.JButton();
         jLabelCpf = new javax.swing.JLabel();
         jLabelEndereco = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jCardNovoVeiculo = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jComboBoxMarca = new javax.swing.JComboBox<>();
@@ -81,6 +82,14 @@ public class LocadoraVeiculosMainView extends javax.swing.JFrame {
         jComboBoxEstado = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jComboBoxCategoria = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        jFormattedTextFieldValorDeCompra = new javax.swing.JFormattedTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jFormattedTextFieldPlaca = new javax.swing.JFormattedTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jButtonAdicionarVeiculo = new javax.swing.JButton();
         jCardLocarVeiculo = new javax.swing.JPanel();
         jCardVenderVeiculo = new javax.swing.JPanel();
 
@@ -186,45 +195,50 @@ public class LocadoraVeiculosMainView extends javax.swing.JFrame {
 
         jLabelEndereco.setText("Endereço");
 
+        jLabel7.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel7.setText("Manter Clientes");
+
         javax.swing.GroupLayout jCardManterClientesLayout = new javax.swing.GroupLayout(jCardManterClientes);
         jCardManterClientes.setLayout(jCardManterClientesLayout);
         jCardManterClientesLayout.setHorizontalGroup(
             jCardManterClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jCardManterClientesLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(jCardManterClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jCardManterClientesLayout.createSequentialGroup()
-                        .addComponent(jLabelRg)
-                        .addGap(44, 44, 44)
-                        .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jCardManterClientesLayout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(botaoAdicionar)
-                        .addGap(18, 18, 18)
-                        .addComponent(botaoRemover)
-                        .addGap(18, 18, 18)
-                        .addComponent(botaoAtualizar))
-                    .addGroup(jCardManterClientesLayout.createSequentialGroup()
-                        .addGroup(jCardManterClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelCpf)
-                            .addComponent(jLabelNome))
-                        .addGap(62, 62, 62)
-                        .addGroup(jCardManterClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldRg, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jFormattedTextFieldCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jCardManterClientesLayout.createSequentialGroup()
-                        .addComponent(jLabelEndereco)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 905, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(38, Short.MAX_VALUE))
-            .addGroup(jCardManterClientesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2))
+                .addGroup(jCardManterClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1036, Short.MAX_VALUE)
+                    .addGroup(jCardManterClientesLayout.createSequentialGroup()
+                        .addGroup(jCardManterClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jCardManterClientesLayout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addComponent(botaoAdicionar)
+                                .addGap(18, 18, 18)
+                                .addComponent(botaoRemover)
+                                .addGap(18, 18, 18)
+                                .addComponent(botaoAtualizar))
+                            .addGroup(jCardManterClientesLayout.createSequentialGroup()
+                                .addGroup(jCardManterClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelCpf)
+                                    .addComponent(jLabelNome)
+                                    .addComponent(jLabelRg)
+                                    .addComponent(jLabelEndereco))
+                                .addGap(22, 22, 22)
+                                .addGroup(jCardManterClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 905, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldRg, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jFormattedTextFieldCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(jCardManterClientesLayout.createSequentialGroup()
+                .addGap(429, 429, 429)
+                .addComponent(jLabel7)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jCardManterClientesLayout.setVerticalGroup(
             jCardManterClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jCardManterClientesLayout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jLabel7)
+                .addGap(18, 18, 18)
                 .addGroup(jCardManterClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelRg)
                     .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -245,8 +259,8 @@ public class LocadoraVeiculosMainView extends javax.swing.JFrame {
                     .addComponent(botaoRemover)
                     .addComponent(botaoAtualizar)
                     .addComponent(botaoAdicionar))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 512, Short.MAX_VALUE))
+                .addGap(23, 23, 23)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE))
         );
 
         jPanelCards.add(jCardManterClientes, "CardManterClientes");
@@ -255,100 +269,158 @@ public class LocadoraVeiculosMainView extends javax.swing.JFrame {
 
         jComboBoxMarca.setModel(new javax.swing.DefaultComboBoxModel<>( MarcaVeiculo.values()) );
 
-jLabel2.setText("Estado");
+        jLabel2.setText("Estado");
 
-jComboBoxEstado.setModel(new javax.swing.DefaultComboBoxModel<>( EstadoVeiculo.values()) );
+        jComboBoxEstado.setModel(new javax.swing.DefaultComboBoxModel<>( EstadoVeiculo.values()) );
 
-jLabel3.setText("Categoria");
+        jLabel3.setText("Categoria");
 
-jComboBoxCategoria.setModel(new javax.swing.DefaultComboBoxModel<>( CategoriaVeiculo.values()) );
+        jComboBoxCategoria.setModel(new javax.swing.DefaultComboBoxModel<>( CategoriaVeiculo.values()) );
 
-javax.swing.GroupLayout jCardNovoVeiculoLayout = new javax.swing.GroupLayout(jCardNovoVeiculo);
-jCardNovoVeiculo.setLayout(jCardNovoVeiculoLayout);
-jCardNovoVeiculoLayout.setHorizontalGroup(
-    jCardNovoVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-    .addGroup(jCardNovoVeiculoLayout.createSequentialGroup()
-        .addContainerGap()
-        .addGroup(jCardNovoVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jLabel4.setText("Modelo");
+
+        jLabel5.setText("Valor de Compra");
+
+        jFormattedTextFieldValorDeCompra.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,###.00"))));
+
+        jLabel6.setText("Placa");
+
+        try {
+            jFormattedTextFieldPlaca.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UUU-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextFieldPlaca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextFieldPlacaActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel8.setText("Novo Veículo");
+
+        jButtonAdicionarVeiculo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jButtonAdicionarVeiculo.setText("Adicionar");
+        jButtonAdicionarVeiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAdicionarVeiculoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jCardNovoVeiculoLayout = new javax.swing.GroupLayout(jCardNovoVeiculo);
+        jCardNovoVeiculo.setLayout(jCardNovoVeiculoLayout);
+        jCardNovoVeiculoLayout.setHorizontalGroup(
+            jCardNovoVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jCardNovoVeiculoLayout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBoxMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jCardNovoVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jCardNovoVeiculoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jCardNovoVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel3)
+                            .addGroup(jCardNovoVeiculoLayout.createSequentialGroup()
+                                .addGroup(jCardNovoVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6))
+                                .addGap(80, 80, 80)
+                                .addGroup(jCardNovoVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jFormattedTextFieldValorDeCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBoxCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBoxEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBoxMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jFormattedTextFieldPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jCardNovoVeiculoLayout.createSequentialGroup()
+                        .addGap(420, 420, 420)
+                        .addComponent(jLabel8))
+                    .addGroup(jCardNovoVeiculoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButtonAdicionarVeiculo)))
+                .addContainerGap(460, Short.MAX_VALUE))
+        );
+        jCardNovoVeiculoLayout.setVerticalGroup(
+            jCardNovoVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jCardNovoVeiculoLayout.createSequentialGroup()
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBoxEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jCardNovoVeiculoLayout.createSequentialGroup()
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBoxCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        .addContainerGap(922, Short.MAX_VALUE))
-    );
-    jCardNovoVeiculoLayout.setVerticalGroup(
-        jCardNovoVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(jCardNovoVeiculoLayout.createSequentialGroup()
-            .addGap(44, 44, 44)
-            .addGroup(jCardNovoVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel1)
-                .addComponent(jComboBoxMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(18, 18, 18)
-            .addGroup(jCardNovoVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel2)
-                .addComponent(jComboBoxEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(18, 18, 18)
-            .addGroup(jCardNovoVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel3)
-                .addComponent(jComboBoxCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addContainerGap(601, Short.MAX_VALUE))
-    );
+                .addContainerGap()
+                .addComponent(jLabel8)
+                .addGap(18, 18, 18)
+                .addGroup(jCardNovoVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jComboBoxMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jCardNovoVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jComboBoxEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jCardNovoVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jComboBoxCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jCardNovoVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jCardNovoVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jFormattedTextFieldValorDeCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jCardNovoVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jFormattedTextFieldPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addComponent(jButtonAdicionarVeiculo)
+                .addContainerGap(408, Short.MAX_VALUE))
+        );
 
-    jPanelCards.add(jCardNovoVeiculo, "CardNovoVeiculo");
+        jPanelCards.add(jCardNovoVeiculo, "CardNovoVeiculo");
 
-    javax.swing.GroupLayout jCardLocarVeiculoLayout = new javax.swing.GroupLayout(jCardLocarVeiculo);
-    jCardLocarVeiculo.setLayout(jCardLocarVeiculoLayout);
-    jCardLocarVeiculoLayout.setHorizontalGroup(
-        jCardLocarVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 1054, Short.MAX_VALUE)
-    );
-    jCardLocarVeiculoLayout.setVerticalGroup(
-        jCardLocarVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 755, Short.MAX_VALUE)
-    );
+        javax.swing.GroupLayout jCardLocarVeiculoLayout = new javax.swing.GroupLayout(jCardLocarVeiculo);
+        jCardLocarVeiculo.setLayout(jCardLocarVeiculoLayout);
+        jCardLocarVeiculoLayout.setHorizontalGroup(
+            jCardLocarVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1054, Short.MAX_VALUE)
+        );
+        jCardLocarVeiculoLayout.setVerticalGroup(
+            jCardLocarVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 755, Short.MAX_VALUE)
+        );
 
-    jPanelCards.add(jCardLocarVeiculo, "CardLocarVeiculo");
+        jPanelCards.add(jCardLocarVeiculo, "CardLocarVeiculo");
 
-    javax.swing.GroupLayout jCardVenderVeiculoLayout = new javax.swing.GroupLayout(jCardVenderVeiculo);
-    jCardVenderVeiculo.setLayout(jCardVenderVeiculoLayout);
-    jCardVenderVeiculoLayout.setHorizontalGroup(
-        jCardVenderVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 1054, Short.MAX_VALUE)
-    );
-    jCardVenderVeiculoLayout.setVerticalGroup(
-        jCardVenderVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 755, Short.MAX_VALUE)
-    );
+        javax.swing.GroupLayout jCardVenderVeiculoLayout = new javax.swing.GroupLayout(jCardVenderVeiculo);
+        jCardVenderVeiculo.setLayout(jCardVenderVeiculoLayout);
+        jCardVenderVeiculoLayout.setHorizontalGroup(
+            jCardVenderVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1054, Short.MAX_VALUE)
+        );
+        jCardVenderVeiculoLayout.setVerticalGroup(
+            jCardVenderVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 755, Short.MAX_VALUE)
+        );
 
-    jPanelCards.add(jCardVenderVeiculo, "CardVenderVeiculo");
+        jPanelCards.add(jCardVenderVeiculo, "CardVenderVeiculo");
 
-    jSplitPane1.setRightComponent(jPanelCards);
+        jSplitPane1.setRightComponent(jPanelCards);
 
-    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-    getContentPane().setLayout(layout);
-    layout.setHorizontalGroup(
-        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(layout.createSequentialGroup()
-            .addComponent(jSplitPane1)
-            .addContainerGap())
-    );
-    layout.setVerticalGroup(
-        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(layout.createSequentialGroup()
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 755, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(0, 45, Short.MAX_VALUE))
-    );
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jSplitPane1)
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 755, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 45, Short.MAX_VALUE))
+        );
 
-    pack();
-    setLocationRelativeTo(null);
+        pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonManterClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonManterClientesActionPerformed
@@ -382,6 +454,14 @@ jCardNovoVeiculoLayout.setHorizontalGroup(
     private void jButtonVenderVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVenderVeiculoActionPerformed
         cardLayout.show(jPanelCards, "CardVenderVeiculo");
     }//GEN-LAST:event_jButtonVenderVeiculoActionPerformed
+
+    private void jFormattedTextFieldPlacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldPlacaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextFieldPlacaActionPerformed
+
+    private void jButtonAdicionarVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarVeiculoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonAdicionarVeiculoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -429,6 +509,7 @@ jCardNovoVeiculoLayout.setHorizontalGroup(
     public javax.swing.JButton botaoAdicionar;
     public javax.swing.JButton botaoAtualizar;
     public javax.swing.JButton botaoRemover;
+    public javax.swing.JButton jButtonAdicionarVeiculo;
     private javax.swing.JButton jButtonLocarVeiculo;
     private javax.swing.JButton jButtonManterClientes;
     private javax.swing.JButton jButtonNovoVeiculo;
@@ -437,13 +518,21 @@ jCardNovoVeiculoLayout.setHorizontalGroup(
     public javax.swing.JPanel jCardManterClientes;
     private javax.swing.JPanel jCardNovoVeiculo;
     private javax.swing.JPanel jCardVenderVeiculo;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<CategoriaVeiculo> jComboBoxCategoria;
     private javax.swing.JComboBox<EstadoVeiculo> jComboBoxEstado;
     private javax.swing.JComboBox<MarcaVeiculo> jComboBoxMarca;
     public javax.swing.JFormattedTextField jFormattedTextFieldCpf;
+    private javax.swing.JFormattedTextField jFormattedTextFieldPlaca;
+    public javax.swing.JFormattedTextField jFormattedTextFieldValorDeCompra;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelCpf;
     private javax.swing.JLabel jLabelEndereco;
     private javax.swing.JLabel jLabelNome;
