@@ -22,7 +22,7 @@ public class ManterClienteController {
 
     public void init() {
         this.view.botaoAdicionar.addActionListener(e -> adicionarCliente(e));
-        this.view.botaoRemover.addActionListener(e -> removerCliente());
+        this.view.botaoRemover.addActionListener(e -> removerListCliente());
         this.view.botaoAtualizar.addActionListener(e -> atualizarCliente(e));
         this.view.jTableClientes.getSelectionModel().addListSelectionListener(e -> atualizaValorCamposComClienteSelecionado());
     }
@@ -38,14 +38,30 @@ public class ManterClienteController {
         this.dao.adicionaCliente(cliente);
     }
 
-    private void removerCliente() {
-        int posicaoCliente = this.view.jTableClientes.getSelectedRow();
-        if (posicaoCliente == -1) {
+    private void removerListCliente() {
+        int linhaAtual = this.view.jTableClientes.getSelectedRow();
+        if (linhaAtual == -1) {
             JOptionPane.showMessageDialog(this.view, "Selecione um cliente para remover");
             return;
         }
 
-        this.dao.removeCliente(posicaoCliente);
+        Object[] options = {"Sim", "Não"};
+        int opcaoSelecionada = JOptionPane.showOptionDialog(this.view,
+                "Deseja remover o(s) cliente(s) selecionado(s)?",
+                "Remover Cliente",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.WARNING_MESSAGE,
+                null,
+                options,
+                options[0]);
+
+        if (opcaoSelecionada != JOptionPane.YES_OPTION) return;
+
+        while (linhaAtual != -1) {
+            this.dao.removeCliente(linhaAtual);
+
+            linhaAtual = this.view.jTableClientes.getSelectedRow();
+        }
     }
     private void atualizarCliente(ActionEvent evt) {
         String mensagemValidacao = validarAtualizacaoClientes(evt);

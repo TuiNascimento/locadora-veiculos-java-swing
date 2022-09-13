@@ -5,6 +5,7 @@
 package com.tuinascimento.locadoraveiculos.view;
 
 import com.tuinascimento.locadoraveiculos.controller.ManterClienteController;
+import com.tuinascimento.locadoraveiculos.utils.MaskUtils;
 
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicButtonUI;
@@ -59,7 +60,7 @@ public class LocadoraVeiculosMainView extends javax.swing.JFrame {
         jCardManterClientes = new javax.swing.JPanel();
         jTextFieldNome = new javax.swing.JTextField();
         jTextFieldEndereco = new javax.swing.JTextField();
-        jFormattedTextFieldCpf = new javax.swing.JFormattedTextField();
+        jFormattedTextFieldCpf = new javax.swing.JFormattedTextField(MaskUtils.getCpfMask());
         jTextFieldRg = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableClientes = new javax.swing.JTable();
