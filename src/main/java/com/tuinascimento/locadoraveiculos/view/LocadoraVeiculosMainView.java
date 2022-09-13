@@ -369,6 +369,13 @@ public class LocadoraVeiculosMainView extends javax.swing.JFrame {
         });
     }
 
+    public void limpaCampos() {
+        this.jTextFieldNome.setText("");
+        this.jTextFieldRg.setText("");
+        this.jFormattedTextFieldCpf.setText("");
+        this.jTextFieldEndereco.setText("");
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton botaoAdicionar;
     public javax.swing.JButton botaoAtualizar;

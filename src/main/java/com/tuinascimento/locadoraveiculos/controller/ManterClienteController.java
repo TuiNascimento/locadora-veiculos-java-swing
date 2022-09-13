@@ -36,6 +36,8 @@ public class ManterClienteController {
 
         Cliente cliente = new Cliente(this.view.jTextFieldNome.getText(), this.view.jTextFieldRg.getText(), this.view.jFormattedTextFieldCpf.getText(), this.view.jTextFieldEndereco.getText());
         this.dao.adicionaCliente(cliente);
+
+        this.view.limpaCampos();
     }
 
     private void removerListCliente() {
@@ -62,6 +64,8 @@ public class ManterClienteController {
 
             linhaAtual = this.view.jTableClientes.getSelectedRow();
         }
+
+        this.view.limpaCampos();
     }
     private void atualizarCliente(ActionEvent evt) {
         String mensagemValidacao = validarAtualizacaoClientes(evt);
@@ -74,6 +78,8 @@ public class ManterClienteController {
 
         Cliente clienteAtualizado = new Cliente(this.view.jTextFieldNome.getText(), this.view.jTextFieldRg.getText(), this.view.jFormattedTextFieldCpf.getText(), this.view.jTextFieldEndereco.getText());
         this.dao.atualizaCliente(linhaAtual, clienteAtualizado);
+
+        this.view.limpaCampos();
     }
 
     private String validarAdicionarCliente(ActionEvent evt) {
