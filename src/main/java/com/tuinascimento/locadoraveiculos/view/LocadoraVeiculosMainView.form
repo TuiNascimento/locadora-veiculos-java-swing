@@ -137,7 +137,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                  <CardConstraints cardName="card2"/>
+                  <CardConstraints cardName="CardManterClientes"/>
                 </Constraint>
               </Constraints>
 
@@ -323,7 +323,7 @@
             <Container class="javax.swing.JPanel" name="jCardNovoVeiculo">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                  <CardConstraints cardName="card2"/>
+                  <CardConstraints cardName="CardNovoVeiculo"/>
                 </Constraint>
               </Constraints>
 
@@ -343,7 +343,7 @@
             <Container class="javax.swing.JPanel" name="jCardLocarVeiculo">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                  <CardConstraints cardName="card2"/>
+                  <CardConstraints cardName="CardLocarVeiculo"/>
                 </Constraint>
               </Constraints>
 
@@ -363,7 +363,7 @@
             <Container class="javax.swing.JPanel" name="jCardVenderVeiculo">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                  <CardConstraints cardName="card2"/>
+                  <CardConstraints cardName="CardVenderVeiculo"/>
                 </Constraint>
               </Constraints>
 

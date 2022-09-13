@@ -240,7 +240,7 @@ public class LocadoraVeiculosMainView extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 512, Short.MAX_VALUE))
         );
 
-        jPanelCards.add(jCardManterClientes, "card2");
+        jPanelCards.add(jCardManterClientes, "CardManterClientes");
 
         javax.swing.GroupLayout jCardNovoVeiculoLayout = new javax.swing.GroupLayout(jCardNovoVeiculo);
         jCardNovoVeiculo.setLayout(jCardNovoVeiculoLayout);
@@ -253,7 +253,7 @@ public class LocadoraVeiculosMainView extends javax.swing.JFrame {
             .addGap(0, 755, Short.MAX_VALUE)
         );
 
-        jPanelCards.add(jCardNovoVeiculo, "card2");
+        jPanelCards.add(jCardNovoVeiculo, "CardNovoVeiculo");
 
         javax.swing.GroupLayout jCardLocarVeiculoLayout = new javax.swing.GroupLayout(jCardLocarVeiculo);
         jCardLocarVeiculo.setLayout(jCardLocarVeiculoLayout);
@@ -266,7 +266,7 @@ public class LocadoraVeiculosMainView extends javax.swing.JFrame {
             .addGap(0, 755, Short.MAX_VALUE)
         );
 
-        jPanelCards.add(jCardLocarVeiculo, "card2");
+        jPanelCards.add(jCardLocarVeiculo, "CardLocarVeiculo");
 
         javax.swing.GroupLayout jCardVenderVeiculoLayout = new javax.swing.GroupLayout(jCardVenderVeiculo);
         jCardVenderVeiculo.setLayout(jCardVenderVeiculoLayout);
@@ -279,7 +279,7 @@ public class LocadoraVeiculosMainView extends javax.swing.JFrame {
             .addGap(0, 755, Short.MAX_VALUE)
         );
 
-        jPanelCards.add(jCardVenderVeiculo, "card2");
+        jPanelCards.add(jCardVenderVeiculo, "CardVenderVeiculo");
 
         jSplitPane1.setRightComponent(jPanelCards);
 
@@ -303,15 +303,15 @@ public class LocadoraVeiculosMainView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonManterClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonManterClientesActionPerformed
-        cardLayout.show(jPanelCards, "jCardManterClientes");
+        cardLayout.show(jPanelCards, "CardManterClientes");
     }//GEN-LAST:event_jButtonManterClientesActionPerformed
 
     private void jButtonNovoVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoVeiculoActionPerformed
-        cardLayout.show(jPanelCards, "jCardNovoVeiculo");
+        cardLayout.show(jPanelCards, "CardNovoVeiculo");
     }//GEN-LAST:event_jButtonNovoVeiculoActionPerformed
 
     private void jButtonLocarVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLocarVeiculoActionPerformed
-        cardLayout.show(jPanelCards, "jCardLocarVeiculo");
+        cardLayout.show(jPanelCards, "CardLocarVeiculo");
     }//GEN-LAST:event_jButtonLocarVeiculoActionPerformed
 
     private void botaoRemoverremoverListaClientesSelecionados(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRemoverremoverListaClientesSelecionados
@@ -331,7 +331,7 @@ public class LocadoraVeiculosMainView extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldEnderecoActionPerformed
 
     private void jButtonVenderVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVenderVeiculoActionPerformed
-        cardLayout.show(jPanelCards, "jButtonVenderVeiculo");
+        cardLayout.show(jPanelCards, "CardVenderVeiculo");
     }//GEN-LAST:event_jButtonVenderVeiculoActionPerformed
 
     /**
