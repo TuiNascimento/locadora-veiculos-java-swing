@@ -1,5 +1,6 @@
 package com.tuinascimento.locadoraveiculos.model.van;
 
+import com.tuinascimento.locadoraveiculos.model.Locacao;
 import com.tuinascimento.locadoraveiculos.model.veiculo.Veiculo;
 import com.tuinascimento.locadoraveiculos.model.veiculo.enums.CategoriaVeiculo;
 import com.tuinascimento.locadoraveiculos.model.veiculo.enums.EstadoVeiculo;
@@ -9,8 +10,8 @@ public class Van extends Veiculo {
 
     private ModeloVan modelo;
 
-    public Van(ModeloVan modelo, MarcaVeiculo marca, EstadoVeiculo estado, CategoriaVeiculo categoria, double valorDeCompra, String placa, int ano) {
-        super(marca, estado, categoria, valorDeCompra, placa, ano);
+    public Van(ModeloVan modelo, MarcaVeiculo marca, Locacao locacao, EstadoVeiculo estado, CategoriaVeiculo categoria, double valorDeCompra, String placa, int ano) {
+        super(marca, locacao, estado, categoria, valorDeCompra, placa, ano);
         this.modelo = modelo;
     }
 

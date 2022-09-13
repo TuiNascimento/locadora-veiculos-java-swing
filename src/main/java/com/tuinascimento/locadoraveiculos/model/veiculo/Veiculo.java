@@ -7,9 +7,8 @@ import com.tuinascimento.locadoraveiculos.model.veiculo.enums.EstadoVeiculo;
 import com.tuinascimento.locadoraveiculos.model.veiculo.enums.MarcaVeiculo;
 
 import java.util.Calendar;
-import java.util.Date;
 
-public abstract class Veiculo  implements VeiculoI{
+public abstract class Veiculo implements VeiculoI {
 
     private MarcaVeiculo marca;
 
@@ -25,8 +24,9 @@ public abstract class Veiculo  implements VeiculoI{
 
     private int ano;
 
-    public Veiculo(MarcaVeiculo marca, EstadoVeiculo estado, CategoriaVeiculo categoria, double valorDeCompra, String placa, int ano) {
+    public Veiculo(MarcaVeiculo marca, Locacao locacao, EstadoVeiculo estado, CategoriaVeiculo categoria, double valorDeCompra, String placa, int ano) {
         this.marca = marca;
+        this.locacao = locacao;
         this.estado = estado;
         this.categoria = categoria;
         this.valorDeCompra = valorDeCompra;
@@ -71,6 +71,11 @@ public abstract class Veiculo  implements VeiculoI{
     @Override
     public CategoriaVeiculo getCategoria() {
         return this.categoria;
+    }
+
+    @Override
+    public Locacao getLocacao() {
+        return this.locacao;
     }
 
     @Override

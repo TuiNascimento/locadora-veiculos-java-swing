@@ -1,5 +1,6 @@
 package com.tuinascimento.locadoraveiculos.model.veiculo;
 
+import com.tuinascimento.locadoraveiculos.model.Locacao;
 import com.tuinascimento.locadoraveiculos.model.cliente.Cliente;
 import com.tuinascimento.locadoraveiculos.model.veiculo.enums.CategoriaVeiculo;
 import com.tuinascimento.locadoraveiculos.model.veiculo.enums.EstadoVeiculo;
@@ -29,6 +30,8 @@ public interface VeiculoI {
     public MarcaVeiculo getMarca();
 
     public CategoriaVeiculo getCategoria();
+
+    public Locacao getLocacao();
 
     public String getPlaca();
 
