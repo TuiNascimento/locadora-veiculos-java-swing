@@ -38,6 +38,8 @@ public class ManterClienteController {
         ClienteDAO.getInstance().adicionaCliente(cliente);
         this.clienteTableModel.fireTableDataChanged();
 
+        this.view.jChoiceCliente.add(cliente.getNome());
+
         limpaCampos();
     }
 

@@ -65,4 +65,16 @@ public class ClienteDAO {
 
         return null;
     }
+
+    public ArrayList<Cliente> getClientesBySimillarNomeOrCpf(String nome, String cpf) {
+        ArrayList<Cliente> clientesFiltrados = new ArrayList<>();
+
+        for (Cliente cliente : this.clientes) {
+            if (cliente.getNome().contains(nome) || cliente.getCpf().contains(cpf)) {
+                clientesFiltrados.add(cliente);
+            }
+        }
+
+        return clientesFiltrados;
+    }
 }
