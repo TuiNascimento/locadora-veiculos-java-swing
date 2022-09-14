@@ -5,19 +5,22 @@ import com.tuinascimento.locadoraveiculos.model.cliente.ClienteDAO;
 import com.tuinascimento.locadoraveiculos.utils.CpfCnpjUtils;
 import com.tuinascimento.locadoraveiculos.utils.StringUtils;
 import com.tuinascimento.locadoraveiculos.view.LocadoraVeiculosMainView;
+import com.tuinascimento.locadoraveiculos.view.tablemodel.ClienteTableModel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 
 public class ManterClienteController {
 
-    private LocadoraVeiculosMainView view;
-
     public ClienteDAO dao;
 
+    public ClienteTableModel clienteTableModel;
+    private LocadoraVeiculosMainView view;
+
     public ManterClienteController(LocadoraVeiculosMainView view) {
-        this.view = view;
         this.dao = new ClienteDAO();
+        this.clienteTableModel = new ClienteTableModel(dao);
+        this.view = view;
     }
 
     public void init() {
@@ -36,6 +39,7 @@ public class ManterClienteController {
 
         Cliente cliente = new Cliente(this.view.jTextFieldNome.getText(), this.view.jTextFieldRg.getText(), this.view.jFormattedTextFieldCpf.getText(), this.view.jTextFieldEndereco.getText());
         this.dao.adicionaCliente(cliente);
+        this.clienteTableModel.fireTableDataChanged();
 
         limpaCampos();
     }
@@ -61,6 +65,7 @@ public class ManterClienteController {
 
         while (linhaAtual != -1) {
             this.dao.removeCliente(linhaAtual);
+            this.clienteTableModel.fireTableRowsDeleted(linhaAtual, linhaAtual);
 
             linhaAtual = this.view.jTableClientes.getSelectedRow();
         }
@@ -78,6 +83,7 @@ public class ManterClienteController {
 
         Cliente clienteAtualizado = new Cliente(this.view.jTextFieldNome.getText(), this.view.jTextFieldRg.getText(), this.view.jFormattedTextFieldCpf.getText(), this.view.jTextFieldEndereco.getText());
         this.dao.atualizaCliente(linhaAtual, clienteAtualizado);
+        this.clienteTableModel.fireTableDataChanged();
 
         limpaCampos();
     }

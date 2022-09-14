@@ -27,9 +27,11 @@ public class ClienteDAO extends AbstractTableModel{
         }
     }
 
+    public ArrayList<Cliente> getAllClientes() {
+        return this.clientes;
+    }
     public void adicionaCliente(Cliente cliente) {
         this.clientes.add(cliente);
-        this.fireTableDataChanged();
     }
 
     public Cliente getCliente(int linha) {
@@ -38,7 +40,6 @@ public class ClienteDAO extends AbstractTableModel{
 
     public void removeCliente(int indiceCliente) {
         this.clientes.remove(indiceCliente);
-        this.fireTableRowsDeleted(indiceCliente, indiceCliente);
     }
 
     public void atualizaCliente(int linha, Cliente clienteAtualizado) {
@@ -48,7 +49,6 @@ public class ClienteDAO extends AbstractTableModel{
         clienteOriginal.setRg(clienteAtualizado.getRg());
         clienteOriginal.setCpf(clienteAtualizado.getCpf());
         clienteOriginal.setEndereco(clienteAtualizado.getEndereco());
-        this.fireTableDataChanged();
     }
 
     public Cliente getClienteByUniqueFields(String name, String rg, String cpf) {
