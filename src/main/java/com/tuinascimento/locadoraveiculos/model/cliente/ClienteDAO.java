@@ -6,14 +6,13 @@ package com.tuinascimento.locadoraveiculos.model.cliente;
 
 import com.tuinascimento.locadoraveiculos.utils.MockUtils;
 
-import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
 
 /**
  *
  * @author asaas
  */
-public class ClienteDAO extends AbstractTableModel{
+public class ClienteDAO {
 
     private ArrayList<Cliente> clientes;
 
@@ -60,37 +59,5 @@ public class ClienteDAO extends AbstractTableModel{
         }
 
         return null;
-    }
-
-    @Override
-    public String getColumnName(int columnIndex) {
-        return this.campos[columnIndex];
-    }
-
-    @Override
-    public int getRowCount() {
-        return this.clientes.size();
-    }
-
-    @Override
-    public int getColumnCount() {
-        return this.campos.length;
-    }
-
-    @Override
-    public Object getValueAt(int rowIndex, int columnIndex) {
-        Cliente cliente = this.clientes.get(rowIndex);
-        switch (columnIndex) {
-            case 0:
-                return cliente.getNome();
-            case 1:
-                return cliente.getRg();
-            case 2:
-                return cliente.getCpf();
-            case 3:
-                return cliente.getEndereco();
-            default:
-                return null;
-        }
     }
 }
