@@ -17,6 +17,10 @@ import javax.swing.*;
 public class LocadoraVeiculos {
 
     public static void main(String[] args) {
+
         new LocadoraVeiculosMainView().setVisible(true);
     }
+
+    //method to startup singleton classes
+
 }

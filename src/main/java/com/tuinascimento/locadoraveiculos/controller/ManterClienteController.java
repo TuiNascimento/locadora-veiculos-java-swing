@@ -12,14 +12,11 @@ import java.awt.event.ActionEvent;
 
 public class ManterClienteController {
 
-    public ClienteDAO dao;
-
     public ClienteTableModel clienteTableModel;
     private LocadoraVeiculosMainView view;
 
     public ManterClienteController(LocadoraVeiculosMainView view) {
-        this.dao = new ClienteDAO();
-        this.clienteTableModel = new ClienteTableModel(dao);
+        this.clienteTableModel = new ClienteTableModel(ClienteDAO.getInstance());
         this.view = view;
     }
 
@@ -38,7 +35,7 @@ public class ManterClienteController {
         }
 
         Cliente cliente = new Cliente(this.view.jTextFieldNome.getText(), this.view.jTextFieldRg.getText(), this.view.jFormattedTextFieldCpf.getText(), this.view.jTextFieldEndereco.getText());
-        this.dao.adicionaCliente(cliente);
+        ClienteDAO.getInstance().adicionaCliente(cliente);
         this.clienteTableModel.fireTableDataChanged();
 
         limpaCampos();
@@ -64,7 +61,7 @@ public class ManterClienteController {
         if (opcaoSelecionada != JOptionPane.YES_OPTION) return;
 
         while (linhaAtual != -1) {
-            this.dao.removeCliente(linhaAtual);
+            ClienteDAO.getInstance().removeCliente(linhaAtual);
             this.clienteTableModel.fireTableRowsDeleted(linhaAtual, linhaAtual);
 
             linhaAtual = this.view.jTableClientes.getSelectedRow();
@@ -82,7 +79,7 @@ public class ManterClienteController {
         int linhaAtual = this.view.jTableClientes.getSelectedRow();
 
         Cliente clienteAtualizado = new Cliente(this.view.jTextFieldNome.getText(), this.view.jTextFieldRg.getText(), this.view.jFormattedTextFieldCpf.getText(), this.view.jTextFieldEndereco.getText());
-        this.dao.atualizaCliente(linhaAtual, clienteAtualizado);
+        ClienteDAO.getInstance().atualizaCliente(linhaAtual, clienteAtualizado);
         this.clienteTableModel.fireTableDataChanged();
 
         limpaCampos();
@@ -130,7 +127,7 @@ public class ManterClienteController {
     }
 
     private String validaClienteComMesmosDados(ActionEvent evt) {
-        Cliente clienteComMesmosDados = this.dao.getClienteByUniqueFields(this.view.jFormattedTextFieldCpf.getText(), this.view.jTextFieldRg.getText(), this.view.jFormattedTextFieldCpf.getText());
+        Cliente clienteComMesmosDados = ClienteDAO.getInstance().getClienteByUniqueFields(this.view.jFormattedTextFieldCpf.getText(), this.view.jTextFieldRg.getText(), this.view.jFormattedTextFieldCpf.getText());
         if (clienteComMesmosDados == null) return "";
 
         return "Já existe um cliente com os mesmos dados. \n";
@@ -138,7 +135,7 @@ public class ManterClienteController {
     public void atualizaValorCamposComClienteSelecionado() {
         int linhaSelecionada = this.view.jTableClientes.getSelectedRow();
         if (linhaSelecionada != -1) {
-            Cliente clienteSelecionado = this.dao.getCliente(linhaSelecionada);
+            Cliente clienteSelecionado = ClienteDAO.getInstance().getCliente(linhaSelecionada);
             this.view.jTextFieldNome.setText(clienteSelecionado.getNome());
             this.view.jTextFieldRg.setText(clienteSelecionado.getRg());
             this.view.jFormattedTextFieldCpf.setText(clienteSelecionado.getCpf());

@@ -14,16 +14,21 @@ import java.util.ArrayList;
  */
 public class ClienteDAO {
 
+    private static ClienteDAO instance;
+
     private ArrayList<Cliente> clientes;
 
     private final String[] campos = {"Nome", "RG", "CPF", "Endereço"};
-
-    public ClienteDAO() {
+    private ClienteDAO() {
         this.clientes = new ArrayList<>();
 
-        for (Cliente cliente : MockUtils.getClientes()) {
-            this.clientes.add(cliente);
+        this.clientes.addAll(MockUtils.getClientes());
+    }
+    public static ClienteDAO getInstance() {
+        if (instance == null) {
+            instance = new ClienteDAO();
         }
+        return instance;
     }
 
     public ArrayList<Cliente> getAllClientes() {
