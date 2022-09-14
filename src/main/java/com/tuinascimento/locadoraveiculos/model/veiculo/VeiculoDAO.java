@@ -2,6 +2,7 @@ package com.tuinascimento.locadoraveiculos.model.veiculo;
 
 import com.tuinascimento.locadoraveiculos.model.veiculo.enums.CategoriaVeiculo;
 import com.tuinascimento.locadoraveiculos.model.veiculo.enums.EstadoVeiculo;
+import com.tuinascimento.locadoraveiculos.utils.MockUtils;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -14,6 +15,7 @@ public class VeiculoDAO {
 
     private VeiculoDAO() {
         this.veiculos = new ArrayList<>();
+        this.veiculos.addAll(MockUtils.getVeiculos());
     }
 
     public static VeiculoDAO getInstance() {

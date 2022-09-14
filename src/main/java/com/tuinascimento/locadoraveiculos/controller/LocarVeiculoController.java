@@ -40,8 +40,9 @@ public class LocarVeiculoController {
 
     private void filtraVeiculoDisponivel() {
         Map<String, Object> filter = Map.of(
-                "nome", this.view.jTextFieldFiltroNome.getText(),
-                "cpf", this.view.jFormattedTextFieldFiltroCpf.getText()
+                "tipo", this.view.jComboBoxTipoVeiculoFiltro.getSelectedItem(),
+                "marca", this.view.jComboBoxMarcaFiltro.getSelectedItem(),
+                "categoria", this.view.jComboBoxCategoriaFiltro.getSelectedItem()
         );
         this.veiculoDisponivelTableModel.setFilters(filter);
         this.veiculoDisponivelTableModel.fireTableDataChanged();

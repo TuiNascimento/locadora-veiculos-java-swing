@@ -1,13 +1,11 @@
 package com.tuinascimento.locadoraveiculos.view.tablemodel;
 
-import com.tuinascimento.locadoraveiculos.model.cliente.ClienteDAO;
 import com.tuinascimento.locadoraveiculos.model.veiculo.Veiculo;
 import com.tuinascimento.locadoraveiculos.model.veiculo.VeiculoDAO;
 import com.tuinascimento.locadoraveiculos.model.veiculo.enums.EstadoVeiculo;
 import com.tuinascimento.locadoraveiculos.utils.StringUtils;
 
 import javax.swing.table.AbstractTableModel;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,7 +20,8 @@ public class VeiculoDisponivelTableModel extends AbstractTableModel {
 
     public void setFilters(Map<String, Object> newFilters) {
         HashMap<String, Object> newFiltersCopy = new HashMap<>(newFilters);
-        newFiltersCopy.putAll(this.filters);
+        Map<String, Object> filter = Map.of("estado", (Object) EstadoVeiculo.DISPONIVEL);
+        newFiltersCopy.putAll(filter);
 
         this.filters = newFiltersCopy;
     }
