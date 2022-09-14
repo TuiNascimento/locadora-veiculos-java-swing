@@ -4,10 +4,19 @@ import java.util.ArrayList;
 
 public class VeiculoDAO {
 
+    private static VeiculoDAO instance;
+
     private ArrayList<Veiculo> veiculos;
 
-    public VeiculoDAO() {
+    private VeiculoDAO() {
         this.veiculos = new ArrayList<>();
+    }
+
+    public static VeiculoDAO getInstance() {
+        if (instance == null) {
+            instance = new VeiculoDAO();
+        }
+        return instance;
     }
     public void save(Veiculo veiculo) {
         veiculos.add(veiculo);

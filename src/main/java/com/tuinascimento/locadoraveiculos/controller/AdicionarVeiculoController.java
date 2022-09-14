@@ -23,11 +23,8 @@ public class AdicionarVeiculoController {
 
     private LocadoraVeiculosMainView view;
 
-    public VeiculoDAO dao;
-
     public AdicionarVeiculoController(LocadoraVeiculosMainView view) {
         this.view = view;
-        this.dao = new VeiculoDAO();
     }
 
     public void init() {
@@ -58,7 +55,7 @@ public class AdicionarVeiculoController {
         }
 
         Veiculo veiculo = buildVeiculoFromFields();
-        this.dao.save(veiculo);
+        VeiculoDAO.getInstance().save(veiculo);
 
         limpaCampos();
     }
@@ -79,7 +76,7 @@ public class AdicionarVeiculoController {
             mensagemValidacao += "O campo Ano é obrigatório \n";
         }
 
-        if (placa != null && this.dao.findByPlaca(placa.toString()) != null) {
+        if (placa != null && VeiculoDAO.getInstance().findByPlaca(placa.toString()) != null) {
             mensagemValidacao += "Já existe um veículo com essa placa \n";
         }
 
