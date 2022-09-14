@@ -66,7 +66,7 @@ public class ClienteDAO {
         return null;
     }
 
-    public ArrayList<Cliente> getClientesBySimillarNomeOrCpf(String nome, String cpf) {
+    public ArrayList<Cliente> getClientesBySimilarNomeOrCpf(String nome, String cpf) {
         ArrayList<Cliente> clientesFiltrados = new ArrayList<>();
 
         for (Cliente cliente : this.clientes) {

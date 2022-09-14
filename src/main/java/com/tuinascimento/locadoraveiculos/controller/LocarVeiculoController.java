@@ -38,7 +38,7 @@ public class LocarVeiculoController {
         String nomeFiltro = this.view.jTextFieldFiltroNome.getText();
         String cpfFiltro = this.view.jFormattedTextFieldFiltroCpf.getText();
 
-        for (Cliente cliente : ClienteDAO.getInstance().getClientesBySimillarNomeOrCpf(nomeFiltro, cpfFiltro)) {
+        for (Cliente cliente : ClienteDAO.getInstance().getClientesBySimilarNomeOrCpf(nomeFiltro, cpfFiltro)) {
             this.view.jChoiceCliente.add(cliente.getNome());
         }
     }
