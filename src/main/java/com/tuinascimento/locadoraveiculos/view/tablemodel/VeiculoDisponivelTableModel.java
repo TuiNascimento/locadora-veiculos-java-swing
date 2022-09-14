@@ -4,15 +4,27 @@ import com.tuinascimento.locadoraveiculos.model.cliente.ClienteDAO;
 import com.tuinascimento.locadoraveiculos.model.veiculo.Veiculo;
 import com.tuinascimento.locadoraveiculos.model.veiculo.VeiculoDAO;
 import com.tuinascimento.locadoraveiculos.model.veiculo.enums.EstadoVeiculo;
+import com.tuinascimento.locadoraveiculos.utils.StringUtils;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class VeiculoDisponivelTableModel extends AbstractTableModel {
 
     private final String[] campos = {"Placa", "Marca", "Modelo", "Ano", "Preço da diária"};
 
+    private Map<String, Object> filters;
+
     public VeiculoDisponivelTableModel() {
+    }
+
+    public void setFilters(Map<String, Object> newFilters) {
+        HashMap<String, Object> newFiltersCopy = new HashMap<>(newFilters);
+        newFiltersCopy.putAll(this.filters);
+
+        this.filters = newFiltersCopy;
     }
 
     @Override
@@ -20,10 +32,9 @@ public class VeiculoDisponivelTableModel extends AbstractTableModel {
         return this.campos[columnIndex];
     }
 
-
     @Override
     public int getRowCount() {
-        return VeiculoDAO.getInstance().findByEstado(EstadoVeiculo.DISPONIVEL).size();
+        return VeiculoDAO.getInstance().query(this.filters).size();
     }
 
     @Override
@@ -33,7 +44,7 @@ public class VeiculoDisponivelTableModel extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        Veiculo veiculo = VeiculoDAO.getInstance().findByEstado(EstadoVeiculo.DISPONIVEL).get(rowIndex);
+        Veiculo veiculo = VeiculoDAO.getInstance().query(this.filters).get(rowIndex);
 
         switch (columnIndex) {
             case 0:
@@ -45,7 +56,7 @@ public class VeiculoDisponivelTableModel extends AbstractTableModel {
             case 3:
                 return veiculo.getAno();
             case 4:
-                return veiculo.getValorDiariaLocacao();
+                return StringUtils.formatDoubleWithMonetarySymbol(veiculo.getValorDiariaLocacao());
             default:
                 return null;
         }

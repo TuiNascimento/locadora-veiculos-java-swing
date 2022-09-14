@@ -9,4 +9,8 @@ public class StringUtils {
     public static double convertToDouble(String str) {
         return Double.parseDouble(str.replaceAll("[^0-9,]", "").replace(",", "."));
     }
+
+    public static String formatDoubleWithMonetarySymbol(double value) {
+        return String.format("R$ %.2f", value);
+    }
 }

@@ -1,8 +1,10 @@
 package com.tuinascimento.locadoraveiculos.model.veiculo;
 
+import com.tuinascimento.locadoraveiculos.model.veiculo.enums.CategoriaVeiculo;
 import com.tuinascimento.locadoraveiculos.model.veiculo.enums.EstadoVeiculo;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class VeiculoDAO {
 
@@ -22,6 +24,35 @@ public class VeiculoDAO {
     }
     public void save(Veiculo veiculo) {
         this.veiculos.add(veiculo);
+    }
+
+    public ArrayList<Veiculo> query(Map<String, Object> filters) {
+        ArrayList<Veiculo> result = this.veiculos;
+        if (filters != null) {
+            if (filters.containsKey("tipo")) {
+                result.removeIf(veiculo -> veiculo.getTipo() != filters.get("tipo"));
+            }
+            if (filters.containsKey("placa")) {
+                result.removeIf(veiculo -> !veiculo.getPlaca().equals(filters.get("placa")));
+            }
+            if (filters.containsKey("marca")) {
+                result.removeIf(veiculo -> !veiculo.getMarca().equals(filters.get("marca")));
+            }
+            if (filters.containsKey("modelo")) {
+                result.removeIf(veiculo -> !veiculo.getModelo().equals(filters.get("modelo")));
+            }
+            if (filters.containsKey("categoria")) {
+                result.removeIf(veiculo -> veiculo.getCategoria() != filters.get("categoria"));
+            }
+            if (filters.containsKey("ano")) {
+                result.removeIf(veiculo -> veiculo.getAno() != ((double) filters.get("ano")));
+            }
+            if (filters.containsKey("valorDiariaLocacao")) {
+                result.removeIf(veiculo -> veiculo.getValorDiariaLocacao() != ((double) filters.get("valorDiariaLocacao")));
+            }
+        }
+
+        return result;
     }
 
     public Veiculo findByPlaca(String placa) {

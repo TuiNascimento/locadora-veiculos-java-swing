@@ -5,6 +5,8 @@ import com.tuinascimento.locadoraveiculos.model.cliente.ClienteDAO;
 import com.tuinascimento.locadoraveiculos.view.LocadoraVeiculosMainView;
 import com.tuinascimento.locadoraveiculos.view.tablemodel.VeiculoDisponivelTableModel;
 
+import java.util.Map;
+
 public class LocarVeiculoController {
 
     private LocadoraVeiculosMainView view;
@@ -26,6 +28,23 @@ public class LocarVeiculoController {
         });
 
         this.view.jFormattedTextFieldFiltroCpf.addPropertyChangeListener(e -> filtraChoiceClientes());
+
+        this.view.jButtonFiltrarVeiculoDisponivel.addActionListener(e -> filtraVeiculoDisponivel());
+
+        this.view.jButtonLocar.addActionListener(e -> locarVeiculo());
+    }
+
+    private void locarVeiculo() {
+
+    }
+
+    private void filtraVeiculoDisponivel() {
+        Map<String, Object> filter = Map.of(
+                "nome", this.view.jTextFieldFiltroNome.getText(),
+                "cpf", this.view.jFormattedTextFieldFiltroCpf.getText()
+        );
+        this.veiculoDisponivelTableModel.setFilters(filter);
+        this.veiculoDisponivelTableModel.fireTableDataChanged();
     }
 
     private void populaChoiceClientes() {

@@ -1,10 +1,14 @@
 package com.tuinascimento.locadoraveiculos.model.veiculo;
 
 import com.tuinascimento.locadoraveiculos.model.Locacao;
+import com.tuinascimento.locadoraveiculos.model.automovel.Automovel;
 import com.tuinascimento.locadoraveiculos.model.cliente.Cliente;
+import com.tuinascimento.locadoraveiculos.model.motocicleta.Motocicleta;
+import com.tuinascimento.locadoraveiculos.model.van.Van;
 import com.tuinascimento.locadoraveiculos.model.veiculo.enums.CategoriaVeiculo;
 import com.tuinascimento.locadoraveiculos.model.veiculo.enums.EstadoVeiculo;
 import com.tuinascimento.locadoraveiculos.model.veiculo.enums.MarcaVeiculo;
+import com.tuinascimento.locadoraveiculos.model.veiculo.enums.TipoVeiculo;
 
 import java.util.Calendar;
 
@@ -37,6 +41,17 @@ public abstract class Veiculo implements VeiculoI {
     public int calculaIdade() {
         int anoAtual = Calendar.getInstance().get(Calendar.YEAR);
         return anoAtual - this.ano;
+    }
+
+    public TipoVeiculo getTipo() {
+        if (this instanceof Automovel) {
+            return TipoVeiculo.AUTOMOVEL;
+        } else if (this instanceof Motocicleta) {
+            return TipoVeiculo.MOTOCICLETA;
+        } else if (this instanceof Van) {
+            return TipoVeiculo.VAN;
+        }
+        return null;
     }
 
     @Override
