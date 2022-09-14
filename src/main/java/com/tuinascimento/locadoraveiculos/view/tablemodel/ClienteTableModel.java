@@ -9,10 +9,7 @@ public class ClienteTableModel extends AbstractTableModel {
 
     private final String[] campos = {"Nome", "RG", "CPF", "Endereço"};
 
-    private ClienteDAO clienteDAO;
-
-    public ClienteTableModel(ClienteDAO clienteDAO) {
-        this.clienteDAO = clienteDAO;
+    public ClienteTableModel() {
     }
 
     @Override
@@ -22,7 +19,7 @@ public class ClienteTableModel extends AbstractTableModel {
 
     @Override
     public int getRowCount() {
-        return this.clienteDAO.getAllClientes().size();
+        return ClienteDAO.getInstance().getAllClientes().size();
     }
 
     @Override
@@ -32,7 +29,7 @@ public class ClienteTableModel extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        Cliente cliente = this.clienteDAO.getAllClientes().get(rowIndex);
+        Cliente cliente = ClienteDAO.getInstance().getAllClientes().get(rowIndex);
 
         switch (columnIndex) {
             case 0:

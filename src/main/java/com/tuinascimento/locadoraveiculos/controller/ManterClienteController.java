@@ -16,7 +16,7 @@ public class ManterClienteController {
     private LocadoraVeiculosMainView view;
 
     public ManterClienteController(LocadoraVeiculosMainView view) {
-        this.clienteTableModel = new ClienteTableModel(ClienteDAO.getInstance());
+        this.clienteTableModel = new ClienteTableModel();
         this.view = view;
     }
 

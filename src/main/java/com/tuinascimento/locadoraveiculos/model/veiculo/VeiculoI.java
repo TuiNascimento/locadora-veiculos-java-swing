@@ -50,4 +50,6 @@ public interface VeiculoI {
      *     Método que será abstrato na classe Veiculo
      */
     public double getValorDiariaLocacao();
+
+    Object getModelo();
 }

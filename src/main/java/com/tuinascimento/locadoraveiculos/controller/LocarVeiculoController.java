@@ -3,13 +3,17 @@ package com.tuinascimento.locadoraveiculos.controller;
 import com.tuinascimento.locadoraveiculos.model.cliente.Cliente;
 import com.tuinascimento.locadoraveiculos.model.cliente.ClienteDAO;
 import com.tuinascimento.locadoraveiculos.view.LocadoraVeiculosMainView;
+import com.tuinascimento.locadoraveiculos.view.tablemodel.VeiculoDisponivelTableModel;
 
 public class LocarVeiculoController {
 
     private LocadoraVeiculosMainView view;
 
+    public VeiculoDisponivelTableModel veiculoDisponivelTableModel;
+
     public LocarVeiculoController(LocadoraVeiculosMainView view) {
         this.view = view;
+        this.veiculoDisponivelTableModel = new VeiculoDisponivelTableModel();
     }
 
     public void init() {

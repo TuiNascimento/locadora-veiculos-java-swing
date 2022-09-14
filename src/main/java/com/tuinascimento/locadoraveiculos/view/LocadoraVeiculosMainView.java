@@ -33,7 +33,7 @@ public class LocadoraVeiculosMainView extends javax.swing.JFrame {
 
     private AdicionarVeiculoController adicionarVeiculoController;
 
-    private LocarVeiculoController locarVeiculoController;
+    public LocarVeiculoController locarVeiculoController;
     public LocadoraVeiculosMainView() {
         this.manterClienteController = new ManterClienteController(this);
         this.adicionarVeiculoController = new AdicionarVeiculoController(this);
@@ -112,6 +112,10 @@ public class LocadoraVeiculosMainView extends javax.swing.JFrame {
         jFormattedTextFieldFiltroCpf = new javax.swing.JFormattedTextField(MaskUtils.getCpfMask());
         jChoiceCliente = new java.awt.Choice();
         jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableVeiculosDisponiveis = new javax.swing.JTable();
         jCardVenderVeiculo = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
 
@@ -159,7 +163,7 @@ public class LocadoraVeiculosMainView extends javax.swing.JFrame {
                     .addComponent(jButtonLocarVeiculo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonNovoVeiculo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonManterClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jSideBarLayout.setVerticalGroup(
             jSideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,7 +231,7 @@ public class LocadoraVeiculosMainView extends javax.swing.JFrame {
             .addGroup(jCardManterClientesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jCardManterClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1036, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2)
                     .addGroup(jCardManterClientesLayout.createSequentialGroup()
                         .addGroup(jCardManterClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jCardManterClientesLayout.createSequentialGroup()
@@ -282,7 +286,7 @@ public class LocadoraVeiculosMainView extends javax.swing.JFrame {
                     .addComponent(botaoAtualizar)
                     .addComponent(botaoAdicionar))
                 .addGap(23, 23, 23)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE))
         );
 
         jPanelCards.add(jCardManterClientes, "CardManterClientes");
@@ -384,7 +388,7 @@ public class LocadoraVeiculosMainView extends javax.swing.JFrame {
                                         .addComponent(jFormattedTextFieldPlaca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(jButtonAdicionarVeiculo)
                             .addComponent(jLabel9))))
-                .addContainerGap(465, Short.MAX_VALUE))
+                .addContainerGap(481, Short.MAX_VALUE))
         );
         jCardNovoVeiculoLayout.setVerticalGroup(
             jCardNovoVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -445,47 +449,77 @@ public class LocadoraVeiculosMainView extends javax.swing.JFrame {
 
         jLabel15.setText("Cliente");
 
+        jLabel16.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel16.setText("Selecionar Cliente");
+
+        jLabel17.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel17.setText("Selecionar Veículo");
+
+        jTableVeiculosDisponiveis.setModel(this.locarVeiculoController.veiculoDisponivelTableModel
+        );
+        jScrollPane1.setViewportView(jTableVeiculosDisponiveis);
+
         javax.swing.GroupLayout jCardLocarVeiculoLayout = new javax.swing.GroupLayout(jCardLocarVeiculo);
         jCardLocarVeiculo.setLayout(jCardLocarVeiculoLayout);
         jCardLocarVeiculoLayout.setHorizontalGroup(
             jCardLocarVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jCardLocarVeiculoLayout.createSequentialGroup()
-                .addContainerGap(448, Short.MAX_VALUE)
-                .addComponent(jLabel11)
-                .addGap(438, 438, 438))
             .addGroup(jCardLocarVeiculoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jCardLocarVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jCardLocarVeiculoLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel11)
+                        .addGap(438, 438, 438))
                     .addGroup(jCardLocarVeiculoLayout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldFiltroNome, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24)
-                        .addComponent(jLabel14))
+                        .addGap(74, 74, 74)
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel17)
+                        .addGap(257, 257, 257))
                     .addGroup(jCardLocarVeiculoLayout.createSequentialGroup()
-                        .addComponent(jLabel15)
-                        .addGap(20, 20, 20)
-                        .addComponent(jChoiceCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jFormattedTextFieldFiltroCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jCardLocarVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jCardLocarVeiculoLayout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jCardLocarVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jFormattedTextFieldFiltroCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldFiltroNome, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jCardLocarVeiculoLayout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addGap(20, 20, 20)
+                                .addComponent(jChoiceCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel14))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(46, 46, 46))))
         );
         jCardLocarVeiculoLayout.setVerticalGroup(
             jCardLocarVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jCardLocarVeiculoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel11)
-                .addGap(18, 18, 18)
+                .addGap(38, 38, 38)
                 .addGroup(jCardLocarVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(jTextFieldFiltroNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14)
-                    .addComponent(jFormattedTextFieldFiltroCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel17)
+                    .addComponent(jLabel16))
                 .addGroup(jCardLocarVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jChoiceCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15))
-                .addContainerGap(648, Short.MAX_VALUE))
+                    .addGroup(jCardLocarVeiculoLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jCardLocarVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(jTextFieldFiltroNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jCardLocarVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel14)
+                            .addComponent(jFormattedTextFieldFiltroCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(13, 13, 13)
+                        .addGroup(jCardLocarVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jChoiceCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15)))
+                    .addGroup(jCardLocarVeiculoLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
 
         jPanelCards.add(jCardLocarVeiculo, "CardLocarVeiculo");
@@ -498,7 +532,7 @@ public class LocadoraVeiculosMainView extends javax.swing.JFrame {
         jCardVenderVeiculoLayout.setHorizontalGroup(
             jCardVenderVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jCardVenderVeiculoLayout.createSequentialGroup()
-                .addContainerGap(448, Short.MAX_VALUE)
+                .addContainerGap(469, Short.MAX_VALUE)
                 .addComponent(jLabel12)
                 .addGap(403, 403, 403))
         );
@@ -643,6 +677,8 @@ public class LocadoraVeiculosMainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -656,10 +692,12 @@ public class LocadoraVeiculosMainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelNome;
     private javax.swing.JLabel jLabelRg;
     private javax.swing.JPanel jPanelCards;
+    private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel jSideBar;
     private javax.swing.JSplitPane jSplitPane1;
     public javax.swing.JTable jTableClientes;
+    public javax.swing.JTable jTableVeiculosDisponiveis;
     public javax.swing.JTextField jTextFieldEndereco;
     public javax.swing.JTextField jTextFieldFiltroNome;
     public javax.swing.JTextField jTextFieldNome;

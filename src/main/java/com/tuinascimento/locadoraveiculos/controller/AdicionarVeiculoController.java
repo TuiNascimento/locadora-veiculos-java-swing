@@ -17,7 +17,6 @@ import com.tuinascimento.locadoraveiculos.utils.StringUtils;
 import com.tuinascimento.locadoraveiculos.view.LocadoraVeiculosMainView;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
 
 public class AdicionarVeiculoController {
 
@@ -31,7 +30,7 @@ public class AdicionarVeiculoController {
         populaComboBoxModeloDeAcordoComTipoVeiculo();
 
         this.view.jComboBoxTipoVeiculo.addActionListener( e -> populaComboBoxModeloDeAcordoComTipoVeiculo() );
-        this.view.jButtonAdicionarVeiculo.addActionListener(e -> adicionarVeiculo(e));
+        this.view.jButtonAdicionarVeiculo.addActionListener(e -> adicionarVeiculo());
     }
 
     private void populaComboBoxModeloDeAcordoComTipoVeiculo() {
@@ -47,7 +46,7 @@ public class AdicionarVeiculoController {
         }
     }
 
-    public void adicionarVeiculo(ActionEvent evt) {
+    public void adicionarVeiculo() {
         String mensagemValidacao = validarAdicionarVeiculo();
         if (!mensagemValidacao.isEmpty()) {
             JOptionPane.showMessageDialog(this.view, mensagemValidacao);
@@ -56,6 +55,8 @@ public class AdicionarVeiculoController {
 
         Veiculo veiculo = buildVeiculoFromFields();
         VeiculoDAO.getInstance().save(veiculo);
+
+        this.view.locarVeiculoController.veiculoDisponivelTableModel.fireTableDataChanged();
 
         limpaCampos();
     }
